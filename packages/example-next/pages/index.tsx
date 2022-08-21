@@ -4,6 +4,7 @@ import MetaMaskCard from '../components/connectorCards/MetaMaskCard'
 import NetworkCard from '../components/connectorCards/NetworkCard'
 import WalletConnectCard from '../components/connectorCards/WalletConnectCard'
 import ProviderExample from '../components/ProviderExample'
+import { Counter } from '../components/Counter'
 
 import { store } from '../redux/store'
 import { Provider } from 'react-redux'
@@ -19,6 +20,7 @@ export default function Home() {
         <NetworkCard />
         <GnosisSafeCard />
       </div>
+      <Counter />
     </Provider>
   )
 }
