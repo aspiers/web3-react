@@ -5,9 +5,12 @@ import NetworkCard from '../components/connectorCards/NetworkCard'
 import WalletConnectCard from '../components/connectorCards/WalletConnectCard'
 import ProviderExample from '../components/ProviderExample'
 
+import { store } from '../redux/store'
+import { Provider } from 'react-redux'
+
 export default function Home() {
   return (
-    <>
+    <Provider store={store}>
       <ProviderExample />
       <div style={{ display: 'flex', flexFlow: 'wrap', fontFamily: 'sans-serif' }}>
         <MetaMaskCard />
@@ -16,6 +19,6 @@ export default function Home() {
         <NetworkCard />
         <GnosisSafeCard />
       </div>
-    </>
+    </Provider>
   )
 }
