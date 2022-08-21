@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
 import { hooks, metaMask } from '../../connectors/metaMask'
 import { Card } from '../Card'
+import { selectWeb3Context } from '../../redux/slices/web3Context'
+import { useSelector } from 'react-redux'
 
-const { useChainId, useAccounts, useIsActivating, useIsActive, useProvider, useENSNames } = hooks
+const { useAccounts, useIsActivating, useIsActive, useProvider, useENSNames } = hooks
 
 export default function MetaMaskCard() {
-  const chainId = useChainId()
+  const web3Context = useSelector(selectWeb3Context)
+  const chainId = web3Context.chainId
+  console.log('chainId from Redux:', chainId)
   const accounts = useAccounts()
   const isActivating = useIsActivating()
 
