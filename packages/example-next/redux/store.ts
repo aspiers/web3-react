@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
 import counterReducer from './slices/counter'
+import web3ContextReducer from './slices/web3Context'
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer
+    counter: counterReducer,
+    web3Context: web3ContextReducer
   },
 })
 
